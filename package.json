@@ -9,7 +9,8 @@
     "dev:copy": "node scripts/monitor.js",
     "build": "cross-env CRX_ENV=production pnpm clear && vite build && vite build --config vite.content.config.ts && node scripts/monitor.js && node scripts/createZip.js",
     "clear": "rimraf extension && rimraf zip",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-fix": "eslint --fix --ext .js,.vue src"
   },
   "author": "TinssonTai",
   "devDependencies": {

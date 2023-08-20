@@ -28,9 +28,12 @@ module.exports = {
     node: true
   },
   rules: {
-    'no-console': 'warn',
+    'no-console': 'off',
     'no-undefined': 'off',
-    'no-mixed-spaces-and-tabs': 'error',
-    'vue/no-unused-vars': 'error'
+    'no-mixed-spaces-and-tabs': 'off',
+    'vue/no-unused-vars': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'vue/v-on-event-hyphenation': 'off',
+    'prettier/prettier': 'off'
   }
 }

@@ -65,8 +65,14 @@ export default defineComponent({
       type: Array<string>,
       required: true
     },
-    dateRange: Number,
-    changeRange: Function
+    dateRange: {
+      type: Number,
+      default: 0
+    },
+    changeRange: {
+      type: Function,
+      default: null
+    }
   },
   setup(props, context) {
     const chartRef = ref(null)

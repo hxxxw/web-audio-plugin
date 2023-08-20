@@ -30,8 +30,12 @@ export default defineComponent({
     ElCard
   },
   props: {
-    cardClick: Function
+    cardClick: {
+      type: Function,
+      default: null
+    }
   },
+  emits: ['cardClick'],
   setup(_props, context) {
     const cardData = ref<ICardInfo>({
       all_article_collect: {
