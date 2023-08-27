@@ -9,3 +9,8 @@
 - 📃 设计UI交互
 - 🔍 实现歌单，多P视频导入
 - 根据视频内容，生成对应歌词
+
+## Technology
+- Vue3
+- TypeScript
+- Naive UI
