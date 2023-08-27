@@ -1,9 +1,9 @@
 {
-  "name": "掘友小助手",
-  "version": "0.0.4",
+  "name": "B站音频小助手",
+  "version": "0.0.1",
   "manifest_version": 3,
-  "author": "dty6809183@gmail.com",
-  "description": "好用的掘金学习运营工具",
+  "author": "huangxinwei742@gmail.com",
+  "description": "基于B站解析视频的音频内容",
   "icons": {
     "16": "/assets/dev.png",
     "48": "/assets/dev.png",
@@ -11,20 +11,23 @@
     "128": "/assets/dev.png"
   },
   "action": {
-    "default_title": "掘友小助手",
-    "default_popup": "/popup/index.html"
+    "default_title": "B站音频小助手",
+    "default_icon": "/assets/dev.png"
   },
   "permissions": [
     "tabs",
-    "activeTab",
-    "scripting",
-    "history",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "storage",
+    "contextMenus",
+    "notifications"
   ],
   "host_permissions": [
     "https://juejin.cn/",
     "https://api.juejin.cn/",
-    "https://www.npmjs.com/"
+    "https://www.npmjs.com/",
+    "https://*.bilivideo.com/*",
+    "https://*.bilibili.com/*",
+    "https://*.bilivideo.cn/*"
   ],
   "background": {
     "service_worker": "/background/index.js"
@@ -36,8 +39,10 @@
       "run_at": "document_end"
     }
   ],
-  "web_accessible_resources": [{
-    "resources": ["contentScript/style.css"],
-    "matches": ["<all_urls>"]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": ["contentScript/style.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

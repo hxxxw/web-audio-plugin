@@ -1,13 +1,9 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { ElButton, ElDialog } from 'element-plus'
 import { getCache } from './utils'
-
+// 想在b站所有网页显示 收藏图标
 export default defineComponent({
-  components: {
-    ElButton,
-    ElDialog
-  },
+  components: {},
   setup() {
     const dialogVisible = ref<boolean>(false)
     const cache = ref<string>('')
@@ -32,9 +28,9 @@ export default defineComponent({
 
 <template>
   <div data-root="true" class="root">
-    <el-button type="primary" @click="handleOpen">Open</el-button>
+    <!-- <el-button type="primary" @click="handleOpen">Open</el-button> -->
 
-    <el-dialog
+    <!-- <el-dialog
       v-model="dialogVisible"
       title="Tips"
       width="30%"
@@ -49,7 +45,7 @@ export default defineComponent({
           >
         </span>
       </template>
-    </el-dialog>
+    </el-dialog> -->
   </div>
 </template>
 

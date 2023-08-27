@@ -16,6 +16,7 @@ export default defineComponent({
     const hasSearch = ref(false)
     const result = ref<ISearchItem[]>([])
     const total = ref(0)
+    console.log('测试打印')
 
     const handleResultChange = (res: {
       list: ISearchItem[]

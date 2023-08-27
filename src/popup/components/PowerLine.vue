@@ -153,10 +153,14 @@ export default defineComponent({
           innerPower = innerPower - changeNum
           return showList
         })
-        avgPower.value = (
-          realList.map((i) => i.changeNum).reduce((a, b) => a + b) /
-          realList.length
-        ).toFixed(1)
+        console.log()
+        if (realList.length > 0) {
+          avgPower.value = (
+            realList.map((i) => i.changeNum).reduce((a, b) => a + b) /
+            realList.length
+          ).toFixed(1)
+        }
+
         powerList.value = realList
         initChart(reverseList(realList))
       }

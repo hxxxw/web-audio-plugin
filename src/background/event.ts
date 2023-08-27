@@ -10,13 +10,22 @@ const formatText = (count: number) => {
 }
 
 export const noticeBadge = () => {
+    console.log("zhixin");
+console.log( chrome.runtime.getURL("popup/index.html"));
+    chrome.action.onClicked.addListener(function (tab) {
+    console.log('onClicked')
+    chrome.tabs.create({
+        'url': chrome.runtime.getURL("popup/index.html")
+    });
+});
   const fetchCount = async () => {
     const countInfo = await getNoticeCount()
-    chrome.action.setBadgeText({ text: formatText(countInfo.total) })
+    chrome.action.setBadgeText({ text: formatText(99) })
   }
   chrome.action.setBadgeBackgroundColor({
     color: '#cb0004'
   })
+    
   fetchCount()
 
   onMessage('set-badge-bg', (params) => {

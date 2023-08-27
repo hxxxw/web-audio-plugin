@@ -1,9 +1,11 @@
+// API方法存放地方
 import axios from 'axios'
 import { getLocalObj } from '~/popup/utils'
 import { ElMessage } from 'element-plus'
 
 const methods = ['post', 'get', 'put', 'delete', 'patch']
 
+// 创建ajax实例
 const ajax: Record<
   string,
   (url: string, data?: any, options?: any) => Promise<any>

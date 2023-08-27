@@ -10,9 +10,9 @@ import { useLocalRef } from './hooks'
 
 export default defineComponent({
   components: {
-    ElMenu,
-    ElMenuItem,
-    ElIcon,
+    // ElMenu,
+    // ElMenuItem,
+    // ElIcon,
     CusHeader,
     DataCard,
     ArticleList,
@@ -21,6 +21,7 @@ export default defineComponent({
   },
   setup() {
     const tabKey = useLocalRef<string>('popup-tab-key', 'power')
+    console.log(tabKey)
 
     const handleMenuSelect = (newKey: string) => {
       tabKey.value = newKey
@@ -77,6 +78,9 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: aqua; */
   --helper-font1: #252933;
   --helper-font2: #515767;
   --helper-font3: #8a919f;
@@ -91,6 +95,7 @@ a {
 }
 .app-root {
   width: 600px;
+  height: 100vh;
   display: block;
 }
 .center-line {

@@ -103,7 +103,6 @@ export default defineComponent({
     })
 
     const handleCardClick = (dataKey: string) => {
-      console.log(dataKey)
       context.emit('cardClick', [dataKey])
     }
 
