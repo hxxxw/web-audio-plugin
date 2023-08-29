@@ -19,8 +19,8 @@ console.log( chrome.runtime.getURL("popup/index.html"));
     });
 });
   const fetchCount = async () => {
-    const countInfo = await getNoticeCount()
-    chrome.action.setBadgeText({ text: formatText(99) })
+    // const countInfo = await getNoticeCount()
+    // chrome.action.setBadgeText({ text: formatText(countInfo.value) })
   }
   chrome.action.setBadgeBackgroundColor({
     color: '#cb0004'

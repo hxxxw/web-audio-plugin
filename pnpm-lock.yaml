@@ -341,17 +341,6 @@ packages:
     engines: { node: '>=10' }
     dev: false
 
-  /@element-plus/icons-vue/2.0.10_vue@3.2.39:
-    resolution:
-      {
-        integrity: sha512-ygEZ1mwPjcPo/OulhzLE7mtDrQBWI8vZzEWSNB2W/RNCRjoQGwbaK4N8lV4rid7Ts4qvySU3njMN7YCiSlSaTQ==
-      }
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
   /@esbuild/linux-loong64/0.15.7:
     resolution:
       {
@@ -1627,33 +1616,6 @@ packages:
         integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
       }
     dev: true
-
-  /element-plus/2.2.16_vue@3.2.39:
-    resolution:
-      {
-        integrity: sha512-rvaTMFIujec9YDC5lyaiQv2XVUCHuhVDq2k+9vQxP78N8Wd07iEOGa9pvEVOO2uYc75l4rSl2RE/IWPH/6Mdzw==
-      }
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@ctrl/tinycolor': 3.4.1
-      '@floating-ui/dom': 1.0.1
-      '@popperjs/core': /@sxzz/popperjs-es/2.11.7
-      '@types/lodash': 4.14.185
-      '@types/lodash-es': 4.17.6
-      '@vueuse/core': 9.2.0_vue@3.2.39
-      async-validator: 4.2.5
-      dayjs: 1.11.6
-      escape-html: 1.0.3
-      lodash: 4.17.21
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.2_3ib2ivapxullxkx3xftsimdk7u
-      memoize-one: 6.0.0
-      normalize-wheel-es: 1.2.0
-      vue: 3.2.39
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-    dev: false
 
   /emoji-regex/8.0.0:
     resolution:
