@@ -9,7 +9,6 @@ export const useLocalRef = <T>(keyName: string, defaultValue?: T) => {
             console.log("11111");
             
         })
-    console.log(newVal,"这是")  // 监听路由跳转
     setLocalObj(keyName, newVal)
   })
 

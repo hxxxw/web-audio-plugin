@@ -1,9 +1,13 @@
 // API方法存放地方
 import axios from 'axios'
+import type { AxiosInstance,AxiosRequestConfig  } from 'axios' // 导入配置声明
 import { getLocalObj } from '~/popup/utils'
-import { ElMessage } from 'element-plus'
+import { useMessage } from 'naive-ui'  // 注册全局消息提示
+
+// 声明axios
 
 const methods = ['post', 'get', 'put', 'delete', 'patch']
+const message = useMessage() //实例消息对象
 
 // 创建ajax实例
 const ajax: Record<
@@ -11,6 +15,7 @@ const ajax: Record<
   (url: string, data?: any, options?: any) => Promise<any>
 > = {}
 
+// 配置请求拦截器
 axios.interceptors.request.use(async (req) => {
   if (req.url.indexOf('juejin.cn') > 0) {
     await setJuejinOrigin()
@@ -46,11 +51,9 @@ methods.forEach((method) => {
           resolve(response.data || {})
           return
         }
-        if (response.data.err_no !== 200 && response.data.err_no !== 0) {
-          ElMessage({
-            message: response.data.err_msg,
-            type: 'error'
-          })
+          if (response.data.err_no !== 200 && response.data.err_no !== 0) {
+            message.warning(response.data.err_msg);
+          
           reject(response.data)
         }
         resolve(response.data.data || {})

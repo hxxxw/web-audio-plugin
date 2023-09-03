@@ -1,6 +1,15 @@
 <script lang="ts">
 import { h, defineComponent, Component } from 'vue'
-import { NSpace, NLayout, NLayoutSider, NMenu, NButton, NIcon } from 'naive-ui'
+import {
+  NSpace,
+  NLayout,
+  NLayoutSider,
+  NMenu,
+  NButton,
+  NIcon,
+  NLoadingBarProvider,
+  useLoadingBar
+} from 'naive-ui'
 import {
   BookOutline as BookIcon,
   PersonOutline as PersonIcon,
@@ -14,14 +23,19 @@ export default defineComponent({
     NLayout,
     NLayoutSider,
     NMenu,
-    NButton
+    NButton,
+    NLoadingBarProvider
   },
   setup() {
     const tabKey = useLocalRef<string>('popup-tab-key', 'power')
+    const loadingBar = useLoadingBar()
     console.log(tabKey)
 
     const handleMenuSelect = (newKey: string) => {
       tabKey.value = newKey
+    }
+    const handleTest = () => {
+      loadingBar.start()
     }
     function renderIcon(icon: Component) {
       return () => h(NIcon, null, { default: () => h(icon) })
@@ -103,36 +117,40 @@ export default defineComponent({
     return {
       tabKey,
       handleMenuSelect,
-      menuOptions
+      menuOptions,
+      handleTest
     }
   }
 })
 </script>
 
 <template>
-  <div class="app-root">
-    <n-button type="info">测试点击</n-button>
+  <n-loading-bar-provider>
+    <div class="app-root">
+      <n-button type="info" @click="handleTest">测试点击</n-button>
 
-    <n-space vertical size="large">
-      <n-layout has-sider sider-placement="right">
-        <n-layout style="max-height: 320px" />
-        <n-layout-sider
-          bordered
-          show-trigger
-          collapse-mode="width"
-          :collapsed-width="64"
-          :width="240"
-          :native-scrollbar="false"
-          style="max-height: 320px"
-        >
-          <n-menu
+      <n-space vertical size="large">
+        <n-layout has-sider sider-placement="right">
+          <n-layout style="max-height: 320px" />
+          <n-layout-sider
+            bordered
+            show-trigger
+            collapse-mode="width"
             :collapsed-width="64"
-            :collapsed-icon-size="22"
-            :options="menuOptions"
-          />
-        </n-layout-sider> </n-layout
-    ></n-space>
-  </div>
+            :width="240"
+            :native-scrollbar="false"
+            style="max-height: 320px"
+          >
+            <n-menu
+              :collapsed-width="64"
+              :collapsed-icon-size="22"
+              :options="menuOptions"
+            />
+          </n-layout-sider>
+        </n-layout>
+      </n-space>
+    </div>
+  </n-loading-bar-provider>
 </template>
 
 <style>

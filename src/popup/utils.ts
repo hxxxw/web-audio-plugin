@@ -1,6 +1,6 @@
 import type { ISearchItem } from '~/popup/type'
 import dayjs from 'dayjs'
-
+// 获取本地对象
 export const getLocalObj = (keyName: string) => {
   const localStr = localStorage.getItem(keyName)
   if (!localStr) {
@@ -8,11 +8,12 @@ export const getLocalObj = (keyName: string) => {
   }
   return JSON.parse(localStr)
 }
-
+// 设置本地对象
 export const setLocalObj = (keyName: string, data: Record<string, any>) => {
   localStorage.setItem(keyName, JSON.stringify(data))
 }
 
+// 向后台脚本发送消息
 export const sendMessage = (taskId: string, params: any) => {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage(
@@ -27,6 +28,7 @@ export const sendMessage = (taskId: string, params: any) => {
   })
 }
 
+// 设置高亮文本
 export const highlightText = (origin: string, words: string) => {
   try {
     const reg = new RegExp(`(${words})`, 'gi')
